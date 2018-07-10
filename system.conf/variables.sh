@@ -24,4 +24,4 @@ export DIR_CULTURA_COLECTIVA=$PROJECTS/github.com/cultura-colectiva/
 export DIR_RANDOM_GIRL=$PROJECTS/bitbucket.org/gatero/random-girl/
 export DIR_DESDE_ABAJO=$PROJECTS/bitbucket.org/gatero/desdeabajo/
 export DIR_DANIEL_ORTEGA=$PROJECTS/bitbucket.org/gatero/daniel-ortega/
-export DIR_SYSTEM_CONFIG=$PROJECTS/github.com/gatero/system.conf/
+export DIR_SYSTEM_CONFIG=$PROJECTS/github.com/gatero/.system/system.conf/
