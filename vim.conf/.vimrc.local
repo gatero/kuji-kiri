@@ -1,0 +1,157 @@
+" theme material monokai
+set wrap linebreak nolist
+set background=dark
+set termguicolors
+colorscheme material-monokai
+let g:materialmonokai_italic=1
+set title                       " change the terminal's title
+set visualbell                  " don't beep
+set noerrorbells                " don't beep
+set autoindent                  " Indentation
+set smartindent                 " smart indent script
+set expandtab                   " convert tabs to spaces
+set tabstop=2                   " a tab is four spaces
+set shiftwidth=2                " number of spaces to use for autoindenting
+set softtabstop=2
+set smarttab                    " insert tabs on the start of a line according to shiftwidth, not tabstop
+set listchars=trail:·,tab:»»    " trail: Character to show for trailing spaces, tab: two characters to be used to show a tab.
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
+set noswapfile
+set mouse=nicr
+set mouse-=a
+set mouse-=c
+
+autocmd Filetype * setlocal ts=2 sw=2 sts=2 expandtab
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType typescript JsPreTmpl markdown
+autocmd FileType typescript syn clear foldBraces
+
+" Tab navigation like Firefox.
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+" multiplecursors
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
+
+
+" airline theme
+if isdirectory(expand("~/.vim/bundle/vim-airline"))
+    let g:airline_theme='deus'
+endif
+
+"indent
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_space_guides = 1
+
+" flow
+if isdirectory(expand("~/.vim/bundle/vim-flow"))
+    let g:flow#enable = 1
+    let g:javascript_plugin_flow = 1
+endif
+" jsx
+let g:jsx_ext_required = 0
+
+" Devicons {
+if isdirectory(expand("~/.vim/bundle/vim-devicons"))
+  set encoding=utf8
+  let g:airline_powerline_fonts = 1
+  let NERDTreeShowLineNumbers=1
+  let NERDTreeChDirMode=0
+  let NERDTreeAutoDeleteBuffer=1
+endif
+" }
+
+"emmet
+let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_settings = {
+\ 'javascript' : {
+\   'extends' : 'jsx'
+\ }
+\}
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+map <leader>l :set hlsearch!<cr>
+" move around buffer
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>g :e#<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+nnoremap <Leader>0 :10b<CR>
+
+nnoremap <Leader>me :tabe%<CR>
+
+nnoremap <leader>so :SessionOpen<CR>
+nnoremap <leader>sl :SessionOpenLast<CR>
+nnoremap <leader>sc :SessionClose<CR>
+nnoremap <leader>ss :SessionSave<CR>
+nnoremap <leader>sa :SessionSaveAs<CR>
+
+" rainbow
+let g:rainbow_active=0
+" golang
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_highlight_types       = 1
+let g:go_highlight_fields      = 1
+let g:go_highlight_functions   = 1
+let g:go_highlight_methods     = 1
+let g:go_highlight_operators   = 1
+let g:go_highlight_extra_types = 1
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+let g:indent_guides_auto_colors = 1
+
+
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] 
+
+" mouse wheel
+nmap <ScrollWheelUp> <nop>
+nmap <S-ScrollWheelUp> <nop>
+nmap <C-ScrollWheelUp> <nop>
+nmap <ScrollWheelDown> <nop>
+nmap <S-ScrollWheelDown> <nop>
+nmap <C-ScrollWheelDown> <nop>
+nmap <ScrollWheelLeft> <nop>
+nmap <S-ScrollWheelLeft> <nop>
+nmap <C-ScrollWheelLeft> <nop>
+nmap <ScrollWheelRight> <nop>
+nmap <S-ScrollWheelRight> <nop>
+nmap <C-ScrollWheelRight> <nop>

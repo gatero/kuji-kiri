@@ -1,0 +1,41 @@
+# This is Git's per-user configuration file.
+[user]
+  # Please adapt and uncomment the following lines:
+  name = Daniel Ortega I.
+  email = daniel@gatero.mx
+  signingkey = 0366D302
+[core]
+  excludesfile = ~/.gitignore
+	editor = vi
+[sequence]
+	editor = vi
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  # basic
+  cp = cherry-pick
+  st = status -s
+  cl = clone
+  ci = commit
+  co = checkout
+  br = branch
+  diff = diff --word-diff
+  dc = diff --cached
+  amend = commit --amend
+  undo-commit = reset --soft HEAD~1
+  rewrite-last= commit --amend --no-edit
+  # stash
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+  # stash
+  sl = stash list
+  sa = stash apply
+  ss = stash save
+  # diff
+  d = diff
+  ds = diff --stat
+[pager]
+	branch = false
