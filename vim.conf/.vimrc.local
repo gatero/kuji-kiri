@@ -26,14 +26,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType typescript JsPreTmpl markdown
 autocmd FileType typescript syn clear foldBraces
 
-" Tab navigation like Firefox.
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
-
 " multiplecursors
 " Called once right before you start selecting multiple cursors
 function! Multiple_cursors_before()
@@ -85,6 +77,29 @@ let g:user_emmet_settings = {
 \   'extends' : 'jsx'
 \ }
 \}
+" rainbow
+let g:rainbow_active=0
+" golang
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_highlight_types       = 1
+let g:go_highlight_fields      = 1
+let g:go_highlight_functions   = 1
+let g:go_highlight_methods     = 1
+let g:go_highlight_operators   = 1
+let g:go_highlight_extra_types = 1
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+let g:indent_guides_auto_colors = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 map <leader>l :set hlsearch!<cr>
 " move around buffer
@@ -111,37 +126,6 @@ nnoremap <leader>sc :SessionClose<CR>
 nnoremap <leader>ss :SessionSave<CR>
 nnoremap <leader>sa :SessionSaveAs<CR>
 
-" rainbow
-let g:rainbow_active=0
-" golang
-let g:go_fmt_command = "goimports"
-let g:go_fmt_fail_silently = 1
-let g:go_highlight_types       = 1
-let g:go_highlight_fields      = 1
-let g:go_highlight_functions   = 1
-let g:go_highlight_methods     = 1
-let g:go_highlight_operators   = 1
-let g:go_highlight_extra_types = 1
-let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_function_arguments = 1
-let g:go_highlight_function_calls = 1
-let g:indent_guides_auto_colors = 1
-
-
-let g:typescript_compiler_binary = 'tsc'
-let g:typescript_compiler_options = ''
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi'] 
-
 " mouse wheel
 nmap <ScrollWheelUp> <nop>
 nmap <S-ScrollWheelUp> <nop>
@@ -155,3 +139,25 @@ nmap <C-ScrollWheelLeft> <nop>
 nmap <ScrollWheelRight> <nop>
 nmap <S-ScrollWheelRight> <nop>
 nmap <C-ScrollWheelRight> <nop>
+
+" Move selection
+" Normal mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+" Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+" Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Tab navigation like Firefox.
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
