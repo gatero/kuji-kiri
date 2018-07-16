@@ -20,6 +20,7 @@ set noswapfile
 set mouse=nicr
 set mouse-=a
 set mouse-=c
+set nospell
 
 autocmd Filetype * setlocal ts=2 sw=2 sts=2 expandtab
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -160,4 +161,3 @@ nnoremap <C-t>     :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
-
