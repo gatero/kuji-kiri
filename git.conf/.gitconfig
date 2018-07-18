@@ -3,7 +3,7 @@
   # Please adapt and uncomment the following lines:
   name = Daniel Ortega I.
   email = daniel@gatero.mx
-  signingkey = 0366D302
+	signingkey = 7F664D3A
 [core]
   excludesfile = ~/.gitignore
 	editor = vi
@@ -39,3 +39,7 @@
   ds = diff --stat
 [pager]
 	branch = false
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg

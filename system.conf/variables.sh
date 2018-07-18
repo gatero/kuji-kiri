@@ -1,3 +1,5 @@
+export LANG=en
+
 # SYSTEM
 export PROJECTS=$HOME/projects
 export MYVIMRC=~/.vimrc.local
@@ -25,3 +27,5 @@ export DIR_RANDOM_GIRL=$PROJECTS/bitbucket.org/gatero/random-girl/
 export DIR_DESDE_ABAJO=$PROJECTS/bitbucket.org/gatero/desdeabajo/
 export DIR_DANIEL_ORTEGA=$PROJECTS/bitbucket.org/gatero/daniel-ortega/
 export DIR_SYSTEM_CONFIG=$PROJECTS/github.com/gatero/.system/system.conf/
+
+
