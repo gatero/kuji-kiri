@@ -1,9 +1,4 @@
 # This is Git's per-user configuration file.
-[user]
-  # Please adapt and uncomment the following lines:
-  name = Daniel Ortega
-  email = contact@daniel-ortega.mx
-  signingkey = 7F664D3A
 [core]
   excludesfile = ~/.gitignore
 	editor = vi
@@ -43,3 +38,5 @@
 	gpgsign = true
 [gpg]
 	program = /usr/local/bin/gpg
+[include]
+  path  = ~/.gitconfig.local
