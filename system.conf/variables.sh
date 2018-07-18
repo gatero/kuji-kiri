@@ -1,4 +1,5 @@
 export LANG=en
+export GPG_TTY=$(tty)
 
 # SYSTEM
 export PROJECTS=$HOME/projects
