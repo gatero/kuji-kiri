@@ -14,10 +14,14 @@
           ],
           "useTsWithBabel": true
         },
-        "@vue/cli-plugin-pwa": {}
+        "@vue/cli-plugin-pwa": {},
+        "@vue/cli-plugin-unit-jest": {},
+        "@vue/cli-plugin-e2e-cypress": {}
       },
       "router": true,
-      "vuex": true
+      "routerHistoryMode": true,
+      "vuex": true,
+      "cssPreprocessor": "sass"
     }
   }
 }
