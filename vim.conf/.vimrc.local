@@ -2,7 +2,9 @@
 set wrap linebreak nolist
 set background=dark
 set termguicolors
-colorscheme material-monokai
+" colorscheme material-monokai
+colorscheme monokai_pro
+"colorscheme night-owl
 let g:materialmonokai_italic=1
 set title                       " change the terminal's title
 set visualbell                  " don't beep

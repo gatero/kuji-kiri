@@ -13,3 +13,5 @@ Bundle 'Quramy/vim-js-pretty-template'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'posva/vim-vue'
 Bundle 'skielbasa/vim-material-monokai'
+Bundle 'phanviet/vim-monokai-pro'
+Bundle "haishanh/night-owl.vim"
