@@ -1,4 +1,6 @@
-export LANG=en
+export LANG="en"
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export GPG_TTY=$(tty)
 
 # SYSTEM
@@ -30,3 +32,4 @@ export DIR_DANIEL_ORTEGA=$PROJECTS/bitbucket.org/gatero/daniel-ortega/
 export DIR_SYSTEM_CONFIG=$PROJECTS/github.com/gatero/.system/system.conf/
 
 
+export HISTCONTROL=ignoreboth:erasedups
