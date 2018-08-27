@@ -9,7 +9,6 @@ export MYVIMRC=~/.vimrc.local
 export VIMRC=~/.vimrc
 export MYVIMBUNDLE=~/.vimrc.bundles.local
 export MYZSHRC=~/.zshrc
-export SYSENV=$PROJECTS/sysenv
 
 # LOCALHOST
 export LOCALHOST=http://localhost
@@ -29,7 +28,9 @@ export DIR_CULTURA_COLECTIVA=$PROJECTS/github.com/cultura-colectiva/
 export DIR_RANDOM_GIRL=$PROJECTS/bitbucket.org/gatero/random-girl/
 export DIR_DESDE_ABAJO=$PROJECTS/bitbucket.org/gatero/desdeabajo/
 export DIR_DANIEL_ORTEGA=$PROJECTS/bitbucket.org/gatero/daniel-ortega/
-export DIR_SYSTEM_CONFIG=$PROJECTS/github.com/gatero/.system/system.conf/
+export DIR_SYSTEM_CONFIG=$PROJECTS/github.com/gatero/.system
 
-
+# HISTORY FILE
 export HISTCONTROL=ignoreboth:erasedups
+export HISTFILE=~/.zsh_history
+export HISTTIMEFORMAT="( %a ) %F %T "

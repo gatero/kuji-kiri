@@ -2,4 +2,4 @@ export PATH=$PATH:~/projects/github.com/gatero/.system/system.conf/bin:~/project
 
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+. "/usr/local/opt/nvm/nvm.sh"
