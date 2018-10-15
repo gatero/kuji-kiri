@@ -105,13 +105,11 @@ export NODE_PATH=:/home/${USER}/npm/lib/node_modules
 export PATH=$PATH:/usr/local/Cellar/john-jumbo/1.8.0/share/john
 
 
-source ~/projects/github.com/gatero/.system/system.conf/main.sh
-
-export CPLUS_INCLUDE_PATH=/System/Library/Frameworks/Python.framework/Headers
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-fpath=(~/.zsh/completion $fpath)
+#export CPLUS_INCLUDE_PATH=/System/Library/Frameworks/Python.framework/Headers
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  #. $(brew --prefix)/etc/bash_completion
+#fi
+#fpath=(~/.zsh/completion $fpath)
 
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
 export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode - bold, magenta
@@ -124,6 +122,16 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
+
 plugins=(git git-extras)
 autoload -Uz compinit && compinit -i
+
 export NODE_PATH=:/home/${USER}/npm/lib/node_modules:/usr/local/lib/node_modules
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/daniel/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/daniel/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/daniel/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/daniel/google-cloud-sdk/completion.zsh.inc'; fi
+
+source ~/projects/github.com/gatero/.system/system.conf/main.sh

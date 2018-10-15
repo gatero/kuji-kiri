@@ -2,9 +2,12 @@
 set wrap linebreak nolist
 set background=dark
 set termguicolors
-" colorscheme material-monokai
+"colorscheme material-monokai
 colorscheme monokai_pro
 "colorscheme night-owl
+"colorscheme seti
+"colorscheme onehalfdark
+"colorscheme molokai
 let g:materialmonokai_italic=1
 set title                       " change the terminal's title
 set visualbell                  " don't beep
@@ -48,7 +51,8 @@ endfunction
 
 " airline theme
 if isdirectory(expand("~/.vim/bundle/vim-airline"))
-    let g:airline_theme='deus'
+    "let g:airline_theme='deus'
+    let g:airline_theme='onehalfdark'
 endif
 
 "indent
@@ -164,3 +168,6 @@ nnoremap <C-t>     :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
+
+" numbers
+let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
