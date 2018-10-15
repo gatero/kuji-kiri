@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/daniel/.oh-my-zsh
+export ZSH=/Users/danielortega/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export NVM_DIR="/Users/daniel/.nvm"
+export NVM_DIR="/Users/danielortega/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # added by me
@@ -101,7 +101,7 @@ if [ -f /Users/daniel/.tnsrc ]; then
 fi
 ###-tns-completion-end-###
 export PATH=$PATH:~/npm/bin
-export NODE_PATH=:/home/daniel/npm/lib/node_modules
+export NODE_PATH=:/home/danielortega/npm/lib/node_modules
 export PATH=$PATH:/usr/local/Cellar/john-jumbo/1.8.0/share/john
 
 
@@ -126,4 +126,4 @@ autoload -U promptinit; promptinit
 prompt spaceship
 plugins=(git git-extras)
 autoload -Uz compinit && compinit -i
-export NODE_PATH=:/home/daniel/npm/lib/node_modules:/usr/local/lib/node_modules
+export NODE_PATH=:/home/danielortega/npm/lib/node_modules:/usr/local/lib/node_modules
