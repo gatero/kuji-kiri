@@ -51,8 +51,32 @@ endfunction
 
 " airline theme
 if isdirectory(expand("~/.vim/bundle/vim-airline"))
-    "let g:airline_theme='deus'
-    let g:airline_theme='onehalfdark'
+    "let g:airline_theme='bubblegum'
+    "let g:airline_theme='molokai'
+    let g:airline_theme='deus'
+    "let g:airline_theme='onehalfdark'
+    if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+    endif
+
+  " Airline symbols
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.readonly = ''
+  let g:airline_symbols.linenr = ''
+  let g:airline_symbols.crypt = ''
+  let g:airline_symbols.linenr = '␊'
+  let g:airline_symbols.linenr = '␤'
+  let g:airline_symbols.linenr = '¶'
+  let g:airline_symbols.branch = '⎇'
+  let g:airline_symbols.paste = 'ρ'
+  let g:airline_symbols.paste = 'Þ'
+  let g:airline_symbols.paste = '∥'
+  let g:airline_symbols.notexists = '∄'
+  let g:airline_symbols.whitespace = 'Ξ'
 endif
 
 "indent
@@ -71,18 +95,18 @@ let g:jsx_ext_required = 0
 " Devicons {
 if isdirectory(expand("~/.vim/bundle/vim-devicons"))
   set encoding=utf8
-  let g:airline_powerline_fonts = 1
-  let NERDTreeShowLineNumbers=1
+  let g:airline_powerline_fonts=1
+  let NERDTreeShowLineNumbers=0
   let NERDTreeChDirMode=0
   let NERDTreeAutoDeleteBuffer=1
 endif
 " }
 
 "emmet
-let g:user_emmet_leader_key='<C-Z>'
+"let g:user_emmet_leader_key='<C-Z>'
 let g:user_emmet_settings = {
 \ 'javascript' : {
-\   'extends' : 'jsx'
+\   'extends' : ['jsx', 'tsx']
 \ }
 \}
 " rainbow
@@ -111,28 +135,28 @@ let g:syntastic_check_on_wq = 0
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 map <leader>l :set hlsearch!<cr>
 " move around buffer
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
-nnoremap <Leader>g :e#<CR>
-nnoremap <Leader>1 :1b<CR>
-nnoremap <Leader>2 :2b<CR>
-nnoremap <Leader>3 :3b<CR>
-nnoremap <Leader>4 :4b<CR>
-nnoremap <Leader>5 :5b<CR>
-nnoremap <Leader>6 :6b<CR>
-nnoremap <Leader>7 :7b<CR>
-nnoremap <Leader>8 :8b<CR>
-nnoremap <Leader>9 :9b<CR>
-nnoremap <Leader>0 :10b<CR>
-nnoremap <Leader>0 :10b<CR>
+"nnoremap <Leader>b :bp<CR>
+"nnoremap <Leader>f :bn<CR>
+"nnoremap <Leader>g :e#<CR>
+"nnoremap <Leader>1 :1b<CR>
+"nnoremap <Leader>2 :2b<CR>
+"nnoremap <Leader>3 :3b<CR>
+"nnoremap <Leader>4 :4b<CR>
+"nnoremap <Leader>5 :5b<CR>
+"nnoremap <Leader>6 :6b<CR>
+"nnoremap <Leader>7 :7b<CR>
+"nnoremap <Leader>8 :8b<CR>
+"nnoremap <Leader>9 :9b<CR>
+"nnoremap <Leader>0 :10b<CR>
+"nnoremap <Leader>0 :10b<CR>
 
 nnoremap <Leader>me :tabe%<CR>
 
-nnoremap <leader>so :SessionOpen<CR>
-nnoremap <leader>sl :SessionOpenLast<CR>
-nnoremap <leader>sc :SessionClose<CR>
-nnoremap <leader>ss :SessionSave<CR>
-nnoremap <leader>sa :SessionSaveAs<CR>
+"nnoremap <leader>so :SessionOpen<CR>
+"nnoremap <leader>sl :SessionOpenLast<CR>
+"nnoremap <leader>sc :SessionClose<CR>
+"nnoremap <leader>ss :SessionSave<CR>
+"nnoremap <leader>sa :SessionSaveAs<CR>
 
 " mouse wheel
 nmap <ScrollWheelUp> <nop>
@@ -162,12 +186,12 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Tab navigation like Firefox.
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
+"nnoremap <C-S-tab> :tabprevious<CR>
+"nnoremap <C-tab>   :tabnext<CR>
+"nnoremap <C-t>     :tabnew<CR>
+"inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+"inoremap <C-tab>   <Esc>:tabnext<CR>i
+"inoremap <C-t>     <Esc>:tabnew<CR>
 
 " numbers
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']

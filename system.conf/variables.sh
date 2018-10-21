@@ -43,25 +43,25 @@ export SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
+  #hg            # Mercurial section (hg_branch  + hg_status)
   package     # Package version (Disabled)
   node          # Node.js section
   ruby          # Ruby section
-  elixir        # Elixir section
-  xcode       # Xcode section (Disabled)
-  swift         # Swift section
+  #elixir        # Elixir section
+  #xcode       # Xcode section (Disabled)
+  #swift         # Swift section
   golang        # Go section
   php           # PHP section
   rust          # Rust section
-  haskell       # Haskell Stack section
-  julia       # Julia section (Disabled)
+  #haskell       # Haskell Stack section
+  #julia       # Julia section (Disabled)
   docker      # Docker section (Disabled)
   aws           # Amazon Web Services section
-  venv          # virtualenv section
+  ##venv          # virtualenv section
   conda         # conda virtualenv section
   pyenv         # Pyenv section
-  dotnet        # .NET section
-  ember       # Ember.js section (Disabled)
+  #dotnet        # .NET section
+  #ember       # Ember.js section (Disabled)
   #kubecontext   # Kubectl context section
   exec_time     # Execution time
   line_sep      # Line break
