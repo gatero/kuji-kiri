@@ -29,9 +29,25 @@ set nospell
 
 autocmd Filetype * setlocal ts=2 sw=2 sts=2 expandtab
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType typescript JsPreTmpl markdown
 autocmd FileType typescript syn clear foldBraces
 autocmd FileType vue syntax sync fromstart
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+let g:jsx_ext_required = 0 " Works on files other than .jsx
+
+if has('autocmd')
+  " Support `-` in css property names
+    augroup VimCSS3Syntax
+        autocmd!
+        autocmd FileType css setlocal iskeyword+=-
+    augroup END
+
+    call jspretmpl#register_tag('gql', 'graphql')
+    " Use sass highlighting for `styled.span` / `styled.div` / etc
+    call jspretmpl#register_tag('\v(styled\.\w+)', 'scss')
+    autocmd FileType javascript.jsx JsPreTmpl
+    autocmd FileType javascript JsPreTmpl
+endif
 
 " multiplecursors
 " Called once right before you start selecting multiple cursors
@@ -52,8 +68,10 @@ endfunction
 " airline theme
 if isdirectory(expand("~/.vim/bundle/vim-airline"))
     "let g:airline_theme='bubblegum'
-    "let g:airline_theme='molokai'
-    let g:airline_theme='deus'
+    let g:airline_theme='molokai'
+    "let g:airline_theme='light'
+    "let g:airline_theme='badwolf'
+    "let g:airline_theme='deus'
     "let g:airline_theme='onehalfdark'
     if !exists('g:airline_symbols')
       let g:airline_symbols = {}
