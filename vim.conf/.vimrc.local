@@ -26,6 +26,13 @@ set mouse=nicr
 set mouse-=a
 set mouse-=c
 set nospell
+set t_Co=256
+
+augroup FastEscape
+  autocmd!
+  au InsertEnter * set timeoutlen=0
+  au InsertLeave * set timeoutlen=1000
+augroup END
 
 autocmd Filetype * setlocal ts=2 sw=2 sts=2 expandtab
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -57,17 +64,20 @@ function! Multiple_cursors_before()
   endif
 endfunction
 
-" Called once only when the multiple selection is canceled (default <Esc>)
+ "Called once only when the multiple selection is canceled (default <Esc>)
 function! Multiple_cursors_after()
   if exists(':NeoCompleteUnlock')==2
     exe 'NeoCompleteUnlock'
   endif
 endfunction
+" map keys for multiplecursors
+let g:multi_cursor_quit_keys='<Esc>,<C-c>'
+let g:multi_cursor_exit_from_insert_mode = 0
 
 
 " airline theme
 if isdirectory(expand("~/.vim/bundle/vim-airline"))
-    "let g:airline_theme='bubblegum'
+    "let g:airline_theme='powerlineish'
     let g:airline_theme='molokai'
     "let g:airline_theme='light'
     "let g:airline_theme='badwolf'
@@ -149,6 +159,11 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" close nerd tree id ctrp open a file
+let g:ctrlp_dont_split = 'NERD'
+" remaps toggle keys for NERDTreeShow
+nmap <Leader>kb :NERDTreeToggle<CR>
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 map <leader>l :set hlsearch!<cr>
