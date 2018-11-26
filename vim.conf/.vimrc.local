@@ -27,6 +27,8 @@ set mouse-=a
 set mouse-=c
 set nospell
 set t_Co=256
+set mouse-=a
+set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
 
 augroup FastEscape
   autocmd!
@@ -38,23 +40,8 @@ autocmd Filetype * setlocal ts=2 sw=2 sts=2 expandtab
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType typescript syn clear foldBraces
 autocmd FileType vue syntax sync fromstart
-autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 let g:jsx_ext_required = 0 " Works on files other than .jsx
-
-if has('autocmd')
-  " Support `-` in css property names
-    augroup VimCSS3Syntax
-        autocmd!
-        autocmd FileType css setlocal iskeyword+=-
-    augroup END
-
-    call jspretmpl#register_tag('gql', 'graphql')
-    " Use sass highlighting for `styled.span` / `styled.div` / etc
-    call jspretmpl#register_tag('\v(styled\.\w+)', 'scss')
-    autocmd FileType javascript.jsx JsPreTmpl
-    autocmd FileType javascript JsPreTmpl
-endif
 
 " multiplecursors
 " Called once right before you start selecting multiple cursors
@@ -154,6 +141,8 @@ let g:go_highlight_function_arguments = 1
 let g:go_highlight_function_calls = 1
 let g:indent_guides_auto_colors = 1
 
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|optimized|compiled|node_modules|vendor)$'
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -168,9 +157,9 @@ nmap <Leader>kb :NERDTreeToggle<CR>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 map <leader>l :set hlsearch!<cr>
 " move around buffer
-"nnoremap <Leader>b :bp<CR>
-"nnoremap <Leader>f :bn<CR>
-"nnoremap <Leader>g :e#<CR>
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>g :e#<CR>
 "nnoremap <Leader>1 :1b<CR>
 "nnoremap <Leader>2 :2b<CR>
 "nnoremap <Leader>3 :3b<CR>
@@ -219,12 +208,12 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Tab navigation like Firefox.
-"nnoremap <C-S-tab> :tabprevious<CR>
-"nnoremap <C-tab>   :tabnext<CR>
-"nnoremap <C-t>     :tabnew<CR>
-"inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-"inoremap <C-tab>   <Esc>:tabnext<CR>i
-"inoremap <C-t>     <Esc>:tabnew<CR>
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
 
 " numbers
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']

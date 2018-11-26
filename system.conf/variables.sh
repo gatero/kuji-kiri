@@ -18,6 +18,7 @@ export LOCAL_API=$LOCALHOST:3000/api
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export GOSRC=$GOPATH/src
+export GOTERO=$GOPATH/src/github.com/gatero
 export GOPKG=$GOPATH/pkg
 export PATH=$PATH:$GOBIN
 
@@ -27,13 +28,16 @@ export DIR_CULTURA_COLECTIVA=$PROJECTS/github.com/cultura-colectiva/
 # BITBUCKET PROJECTS
 export DIR_RANDOM_GIRL=$PROJECTS/bitbucket.org/gatero/random-girl/
 export DIR_DESDE_ABAJO=$PROJECTS/bitbucket.org/gatero/desdeabajo/
-export DIR_DANIEL_ORTEGA=$PROJECTS/bitbucket.org/gatero/daniel-ortega/
+export DIR_CATALOGER=$PROJECTS/bitbucket.org/gatero/cataloger/
+export DIR_DANIEL_ORTEGA=$PROJECTS/bitbucket.org/gatero/daniel-ortega.mx/
 export DIR_SYSTEM_CONFIG=$PROJECTS/github.com/gatero/.system
 
 # HISTORY FILE
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILE=~/.zsh_history
+export HISTSIZE=100000000
 export HISTTIMEFORMAT="( %a ) %F %T "
+export HISTFILESIZE=10000000
 
 # SPACESHIP THEME
 export SPACESHIP_DIR=/Users/daniel/npm/lib/node_modules/spaceship-prompt
