@@ -13,4 +13,3 @@ spaceship_jobs() {
     "${SPACESHIP_JOBS_SYMBOL} ${jobs_amount}" \
     "$SPACESHIP_JOBS_SUFFIX"
 }
-

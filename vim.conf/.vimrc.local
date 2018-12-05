@@ -29,6 +29,7 @@ set nospell
 set t_Co=256
 set mouse-=a
 set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 augroup FastEscape
   autocmd!
@@ -171,7 +172,6 @@ nnoremap <Leader>g :e#<CR>
 "nnoremap <Leader>9 :9b<CR>
 "nnoremap <Leader>0 :10b<CR>
 "nnoremap <Leader>0 :10b<CR>
-
 nnoremap <Leader>me :tabe%<CR>
 
 "nnoremap <leader>so :SessionOpen<CR>

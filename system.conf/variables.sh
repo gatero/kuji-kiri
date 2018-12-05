@@ -33,12 +33,6 @@ export DIR_DANIEL_ORTEGA=$PROJECTS/bitbucket.org/gatero/daniel-ortega.mx/
 export DIR_SYSTEM_CONFIG=$PROJECTS/github.com/gatero/.system
 
 # HISTORY FILE
-export HISTCONTROL=ignoreboth:erasedups
-export HISTFILE=~/.zsh_history
-export HISTSIZE=100000000
-export HISTTIMEFORMAT="( %a ) %F %T "
-export HISTFILESIZE=10000000
-
 # SPACESHIP THEME
 export SPACESHIP_DIR=/Users/daniel/npm/lib/node_modules/spaceship-prompt
 export SPACESHIP_PROMPT_ORDER=(
@@ -66,7 +60,7 @@ export SPACESHIP_PROMPT_ORDER=(
   pyenv         # Pyenv section
   #dotnet        # .NET section
   #ember       # Ember.js section (Disabled)
-  #kubecontext   # Kubectl context section
+  kubecontext   # Kubectl context section
   exec_time     # Execution time
   line_sep      # Line break
   battery       # Battery level and status
