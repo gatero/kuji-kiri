@@ -1,0 +1,14 @@
+set wrap linebreak nolist
+set background=dark
+set termguicolors
+colorscheme monokai_pro
+"colorscheme material-monokai
+"colorscheme night-owl
+"colorscheme seti
+"colorscheme onehalfdark
+"colorscheme molokai
+"colorscheme fromthehell
+"colorscheme hashpunk
+"colorscheme srcery
+"colorscheme azuki
+"colorscheme boa
