@@ -1,0 +1,14 @@
+" Devicons {
+if isdirectory(expand("~/.vim/bundle/vim-devicons"))
+  set encoding=utf8
+  let g:airline_powerline_fonts=1
+  let NERDTreeShowLineNumbers=0
+  let NERDTreeChDirMode=0
+  let NERDTreeAutoDeleteBuffer=1
+  let g:WebDevIconsOS = 'Darwin'
+  let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+  let g:DevIconsEnableFoldersOpenClose = 1
+  let g:DevIconsEnableFolderExtensionPatternMatching = 1
+endif
+" }
+

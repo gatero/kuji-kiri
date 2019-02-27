@@ -1,0 +1,5 @@
+"nnoremap <leader>so :SessionOpen<CR>
+"nnoremap <leader>sl :SessionOpenLast<CR>
+"nnoremap <leader>sc :SessionClose<CR>
+"nnoremap <leader>ss :SessionSave<CR>
+"nnoremap <leader>sa :SessionSaveAs<CR>

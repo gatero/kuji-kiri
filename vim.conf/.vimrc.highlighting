@@ -1,0 +1,3 @@
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+map <leader>l :set hlsearch!<cr>
+

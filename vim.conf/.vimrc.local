@@ -4,9 +4,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-if filereadable($DIR_SYSTEM_CONFIG/vim.conf/.vimrc.theme)
-  source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.theme
-endif
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.theme
 
 let g:materialmonokai_italic=1
 set title                       " change the terminal's title
@@ -39,187 +37,29 @@ augroup FastEscape
 augroup END
 
 autocmd Filetype * setlocal ts=2 sw=2 sts=2 expandtab
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType make set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType typescript syn clear foldBraces
 autocmd FileType vue syntax sync fromstart
 
-let g:jsx_ext_required = 0 " Works on files other than .jsx
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.highlighting
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.multiple_cursors
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.javascript
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.airline
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.indent
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.flow
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.devicons
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.rainbow
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.golang
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.syntastic
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.crtlp
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.nerdtree
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.javascript
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.buffers
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.session
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.mouse
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.tabs
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.move_selection
+source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.numbers
 
-" multiplecursors
-" Called once right before you start selecting multiple cursors
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
-endfunction
 
- "Called once only when the multiple selection is canceled (default <Esc>)
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction
-" map keys for multiplecursors
-let g:multi_cursor_quit_keys='<Esc>,<C-c>'
-let g:multi_cursor_exit_from_insert_mode = 0
-
-
-" airline theme
-if isdirectory(expand("~/.vim/bundle/vim-airline"))
-    "let g:airline_theme='powerlineish'
-    let g:airline_theme='molokai'
-    "let g:airline_theme='light'
-    "let g:airline_theme='badwolf'
-    "let g:airline_theme='deus'
-    "let g:airline_theme='onehalfdark'
-    if !exists('g:airline_symbols')
-      let g:airline_symbols = {}
-    endif
-
-  " Airline symbols
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = ''
-  let g:airline_symbols.crypt = ''
-  let g:airline_symbols.linenr = '␊'
-  let g:airline_symbols.linenr = '␤'
-  let g:airline_symbols.linenr = '¶'
-  let g:airline_symbols.branch = '⎇'
-  let g:airline_symbols.paste = 'ρ'
-  let g:airline_symbols.paste = 'Þ'
-  let g:airline_symbols.paste = '∥'
-  let g:airline_symbols.notexists = '∄'
-  let g:airline_symbols.whitespace = 'Ξ'
-endif
-
-"indent
-let g:indent_guides_start_level = 1
-let g:indent_guides_guide_size = 1
-let g:indent_guides_space_guides = 1
-
-" flow
-if isdirectory(expand("~/.vim/bundle/vim-flow"))
-    let g:flow#enable = 1
-    let g:javascript_plugin_flow = 1
-endif
-" jsx
-let g:jsx_ext_required = 0
-
-" Devicons {
-if isdirectory(expand("~/.vim/bundle/vim-devicons"))
-  set encoding=utf8
-  let g:airline_powerline_fonts=1
-  let NERDTreeShowLineNumbers=0
-  let NERDTreeChDirMode=0
-  let NERDTreeAutoDeleteBuffer=1
-  let g:WebDevIconsOS = 'Darwin'
-  let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-  let g:DevIconsEnableFoldersOpenClose = 1
-  let g:DevIconsEnableFolderExtensionPatternMatching = 1
-endif
-" }
-
-"emmet
-"let g:user_emmet_leader_key='<C-Z>'
-let g:user_emmet_settings = {
-\ 'javascript' : {
-\   'extends' : ['jsx', 'tsx']
-\ }
-\}
-" rainbow
-let g:rainbow_active=0
-" golang
-let g:go_fmt_command = "goimports"
-let g:go_fmt_fail_silently = 1
-let g:go_highlight_types       = 1
-let g:go_highlight_fields      = 1
-let g:go_highlight_functions   = 1
-let g:go_highlight_methods     = 1
-let g:go_highlight_operators   = 1
-let g:go_highlight_extra_types = 1
-let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_function_arguments = 1
-let g:go_highlight_function_calls = 1
-let g:indent_guides_auto_colors = 1
-
-let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|optimized|compiled|node_modules|vendor)$'
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" close nerd tree id ctrp open a file
-let g:ctrlp_dont_split = 'NERD'
-" remaps toggle keys for NERDTreeShow
-nmap <Leader>kb :NERDTreeToggle<CR>
-
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-map <leader>l :set hlsearch!<cr>
-" move around buffer
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
-nnoremap <Leader>g :e#<CR>
-"nnoremap <Leader>1 :1b<CR>
-"nnoremap <Leader>2 :2b<CR>
-"nnoremap <Leader>3 :3b<CR>
-"nnoremap <Leader>4 :4b<CR>
-"nnoremap <Leader>5 :5b<CR>
-"nnoremap <Leader>6 :6b<CR>
-"nnoremap <Leader>7 :7b<CR>
-"nnoremap <Leader>8 :8b<CR>
-"nnoremap <Leader>9 :9b<CR>
-"nnoremap <Leader>0 :10b<CR>
-"nnoremap <Leader>0 :10b<CR>
-nnoremap <Leader>me :tabe%<CR>
-
-"nnoremap <leader>so :SessionOpen<CR>
-"nnoremap <leader>sl :SessionOpenLast<CR>
-"nnoremap <leader>sc :SessionClose<CR>
-"nnoremap <leader>ss :SessionSave<CR>
-"nnoremap <leader>sa :SessionSaveAs<CR>
-
-" mouse wheel
-nmap <ScrollWheelUp> <nop>
-nmap <S-ScrollWheelUp> <nop>
-nmap <C-ScrollWheelUp> <nop>
-nmap <ScrollWheelDown> <nop>
-nmap <S-ScrollWheelDown> <nop>
-nmap <C-ScrollWheelDown> <nop>
-nmap <ScrollWheelLeft> <nop>
-nmap <S-ScrollWheelLeft> <nop>
-nmap <C-ScrollWheelLeft> <nop>
-nmap <ScrollWheelRight> <nop>
-nmap <S-ScrollWheelRight> <nop>
-nmap <C-ScrollWheelRight> <nop>
-
-" Move selection
-" Normal mode
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-
-" Insert mode
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
-
-" Visual mode
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
-" Tab navigation like Firefox.
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
-
-" numbers
-let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']

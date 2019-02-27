@@ -1,0 +1,7 @@
+" flow
+if isdirectory(expand("~/.vim/bundle/vim-flow"))
+    let g:flow#enable = 1
+    let g:javascript_plugin_flow = 1
+endif
+" jsx
+

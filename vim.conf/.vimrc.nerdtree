@@ -1,0 +1,3 @@
+" remaps toggle keys for NERDTreeShow
+nmap <Leader>kb :NERDTreeToggle<CR>
+

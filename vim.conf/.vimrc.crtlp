@@ -1,0 +1,5 @@
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|optimized|compiled|node_modules|vendor)$'
+
+" close nerd tree id ctrp open a file
+let g:ctrlp_dont_split = 'NERD'
+
