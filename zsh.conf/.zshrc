@@ -57,8 +57,9 @@ ZSH_THEME="apple"
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
+plugins=(git gitfast git-extras encode64 docker z)
 
+source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -123,7 +124,6 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 autoload -U promptinit; promptinit
 prompt spaceship
 
-plugins=(git git-extras)
 autoload -Uz compinit && compinit -i
 
 export NODE_PATH=:/home/${USER}/npm/lib/node_modules:/usr/local/lib/node_modules
@@ -158,7 +158,7 @@ setopt inc_append_history
 setopt share_history # share command history data
 export HISTSIZE=200000000
 export HISTFILE="$HOME/.history"
-export HISTORY_IGNORE="(ls *|pwd|exit|history|bg|fg *|l|jobs|syse|zshe|vime|vimbe|cd *|rm *|sudo purge|man *|**project.sh *|docker ps -a|git status|gs|git branch|gb|git add *|git reset --hard|exe|vi .|vim .|git diff|TOKEN=*|fg|git stash clean|tig|git branch -D *|git checkout develop|git commit|git commit *|git diff|gd|gc *|git checkout *|git branch -d *|git push *|git stash *|vi *|vi|git diff *|git fetch *|L|exec zexec zshh|minikube ip.)"
+export HISTORY_IGNORE="(ls *|pwd|exit|history|bg|fg *|l|jobs|syse|zshe|vime|vimbe|cd *|rm *|sudo purge|man *|**project.sh *|docker ps -a|git status|gs|git branch|gb|git add *|git reset --hard|exe|vi .|vim .|git diff|TOKEN=*|fg|git stash clean|tig|git branch -D *|git checkout develop|git commit|git commit *|git diff|gd|gc *|git checkout *|git branch -d *|git push *|git stash *|vi *|vi|git diff *|git fetch *|L|exec zexec zshh|minikube ip.|mkdir *|touch *|mkdir|touch|git init|git pull *|**--help|docker rmi *|docker rm *|git checkout|git checkout|gco|git remotes *|git remote *|./*|CD|CD *|cp|fgfg|ga .|ga|grep *|git cherry-pick|git cherry-pick *|chmod *|exec zsh|exec zsh *|git stash|docker logs *|L|kill *|kill|../../*|cat *|gd *|FG|d *|l|:q|../*|l *|jcd|jcd *|got|got *|source|source *|20|exec syse|echo|echo *|CURL|CURL *|docker-compose up|docker-compose down|git reset|git reset *|git merge|git merge *|docker images|cp|cp *|git branch -a|git branch|brew update|brew upgrade *)"
 export SAVEHIST=$HISTSIZE
 
 source ~/projects/github.com/gatero/.system/system.conf/main.sh
