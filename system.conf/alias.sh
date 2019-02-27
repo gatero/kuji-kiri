@@ -18,3 +18,5 @@ alias gco='git checkout '
 
 alias rm='trash'
 alias diff="diff --old-group-format=$'\e[0;31m%<\e[0m' --new-group-format=$'\e[0;31m%>\e[0m' --unchanged-group-format=$'\e[0;32m%=\e[0m'"
+
+alias imgDownload='googleimagesdownload --output_directory ~/Desktop/downloaded-images'
