@@ -26,6 +26,10 @@ export PATH=$PATH:$GOBIN
 export DIR_CULTURA_COLECTIVA=$PROJECTS/github.com/cultura-colectiva/
 
 # BITBUCKET PROJECTS
+export DIR_PROJECTS=$PROJECTS
+export DIR_GITHUB=$PROJECTS/github.com/
+export DIR_LABORATORY=$PROJECTS/laboratory/
+export DIR_DOCKER=$PROJECTS/hub.docker.com/
 export DIR_RANDOM_GIRL=$PROJECTS/bitbucket.org/gatero/random-girl/
 export DIR_DESDE_ABAJO=$PROJECTS/bitbucket.org/gatero/desdeabajo/
 export DIR_CATALOGER=$PROJECTS/bitbucket.org/gatero/cataloger/
