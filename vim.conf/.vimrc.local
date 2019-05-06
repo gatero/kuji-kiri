@@ -7,6 +7,8 @@ filetype indent on
 source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.theme
 
 let g:materialmonokai_italic=1
+let NERDTreeHighlightCursorline=0
+set lazyredraw
 set title                       " change the terminal's title
 set visualbell                  " don't beep
 set noerrorbells                " don't beep
@@ -26,6 +28,7 @@ set mouse-=c
 set nospell
 set t_Co=256
 set mouse-=a
+set relativenumber
 "set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
 "autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 highlight NERDTreeCWD ctermfg=white

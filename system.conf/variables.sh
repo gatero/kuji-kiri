@@ -21,6 +21,7 @@ export GOSRC=$GOPATH/src
 export GOTERO=$GOPATH/src/github.com/gatero
 export GOPKG=$GOPATH/pkg
 export PATH=$PATH:$GOBIN
+export GO111MODULE=on
 
 # GITHUB PROJECTS
 export DIR_CULTURA_COLECTIVA=$PROJECTS/github.com/cultura-colectiva/

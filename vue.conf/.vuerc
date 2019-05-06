@@ -22,6 +22,28 @@
       "routerHistoryMode": true,
       "vuex": true,
       "cssPreprocessor": "sass"
+    },
+    "custom-only-css": {
+      "useConfigFiles": true,
+      "plugins": {
+        "@vue/cli-plugin-babel": {},
+        "@vue/cli-plugin-typescript": {
+          "classComponent": true,
+          "tsLint": true,
+          "lintOn": [
+            "save"
+          ],
+          "useTsWithBabel": true
+        },
+        "@vue/cli-plugin-pwa": {},
+        "@vue/cli-plugin-unit-jest": {},
+        "@vue/cli-plugin-e2e-nightwatch": {}
+      },
+      "router": true,
+      "routerHistoryMode": true,
+      "vuex": true
     }
-  }
+  },
+  "latestVersion": "3.4.1",
+  "lastChecked": 1551596608687
 }

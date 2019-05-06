@@ -158,7 +158,11 @@ setopt inc_append_history
 setopt share_history # share command history data
 export HISTSIZE=200000000
 export HISTFILE="$HOME/.history"
-export HISTORY_IGNORE="(ls *|pwd|exit|history|bg|fg *|l|jobs|syse|zshe|vime|vimbe|cd *|rm *|sudo purge|man *|**project.sh *|docker ps -a|git status|gs|git branch|gb|git add *|git reset --hard|exe|vi .|vim .|git diff|TOKEN=*|fg|git stash clean|tig|git branch -D *|git checkout develop|git commit|git commit *|git diff|gd|gc *|git checkout *|git branch -d *|git push *|git stash *|vi *|vi|git diff *|git fetch *|L|exec zexec zshh|minikube ip.|mkdir *|touch *|mkdir|touch|git init|git pull *|**--help|docker rmi *|docker rm *|git checkout|git checkout|gco|git remotes *|git remote *|./*|CD|CD *|cp|fgfg|ga .|ga|grep *|git cherry-pick|git cherry-pick *|chmod *|exec zsh|exec zsh *|git stash|docker logs *|L|kill *|kill|../../*|cat *|gd *|FG|d *|l|:q|../*|l *|jcd|jcd *|got|got *|source|source *|20|exec syse|echo|echo *|CURL|CURL *|docker-compose up|docker-compose down|git reset|git reset *|git merge|git merge *|docker images|cp|cp *|git branch -a|git branch|brew update|brew upgrade *)"
+IGNORE="ls|l|history *|syze|cd|vi|vim|vi .|vim .|git commit -m *|gc -m *|syse|fg|man *|git add *|"
+IGNORE="${IGNORE}git diff *|git commit *|git checkout -b *|ga *|gco *|gd *|gp *|git push *|GS|cd *|git|"
+IGNORE="${IGNORE}ñ|CD|CD *|l *|ls *|GS|jobs|fg|git branch|gb|git branch *|gb *|fb-messenger-cli --help|gt *|"
+IGNORE="${IGNORE}mv|mv *|cp|cp *|rm|rm *|vi *"
+export HISTORY_IGNORE="(${IGNORE})"
 export SAVEHIST=$HISTSIZE
 
 source ~/projects/github.com/gatero/.system/system.conf/main.sh
