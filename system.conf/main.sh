@@ -1,4 +1,3 @@
-source ~/projects/github.com/gatero/.system/system.conf/variables.sh;
-source ~/projects/github.com/gatero/.system/system.conf/alias.sh;
-source ~/projects/github.com/gatero/.system/system.conf/theme-spaceship/jobs.zsh;
-source ~/projects/github.com/gatero/.system/system.conf/boot.sh;
+source /media/gatero/files/Projects/environment.conf/system.conf/variables.sh;
+source /media/gatero/files/Projects/environment.conf/system.conf/alias.sh;
+source /media/gatero/files/Projects/environment.conf/system.conf/boot.sh;
