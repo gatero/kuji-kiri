@@ -20,7 +20,6 @@ export GOROOT=$HOME/go
 export GOPATH=$PROJECTS/go-workspace
 export GOBIN=$GOROOT/bin
 export PATH=$PATH:$GOBIN
-export GO111MODULE=on
 
 # GITHUB PROJECTS
 export DIR_CULTURA_COLECTIVA=$PROJECTS/github.com/cultura-colectiva/

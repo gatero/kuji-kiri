@@ -23,6 +23,5 @@ Bundle 'trusktr/seti.vim'
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 Bundle 'szorfein/fromthehell.vim'
 Bundle 'abnt713/vim-hashpunk'
-Bundle 'kudabux/vim-srcery-drk'
 Bundle 'dennougorilla/azuki.vim'
 Bundle 'monkoose/boa.vim'

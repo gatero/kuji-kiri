@@ -22,12 +22,15 @@ set smarttab                    " insert tabs on the start of a line according t
 set listchars=trail:·,tab:»»    " trail: Character to show for trailing spaces, tab: two characters to be used to show a tab.
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set noswapfile
-set mouse=nicr
-set mouse-=a
-set mouse-=c
+"set mouse=nicr
+"set mouse-=a
+"set mouse-=c
 set nospell
 set t_Co=256
-set mouse-=a
+"set mouse-=a
+set mouse=
+set ttymouse=
+
 set relativenumber
 "set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
 "autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
@@ -65,4 +68,7 @@ source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.tabs
 source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.move_selection
 source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.numbers
 
-
+"noremap <Up> <NOP>
+"noremap <Down> <NOP>
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>
