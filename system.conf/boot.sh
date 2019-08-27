@@ -1,1 +1,1 @@
-export PATH=$PATH:/media/gatero/files/Projects/environment.conf/system.conf/bin
+export PATH=$PATH:~/files/Projects/environment.conf/system.conf/bin

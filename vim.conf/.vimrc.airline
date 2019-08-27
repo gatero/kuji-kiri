@@ -1,10 +1,11 @@
 " airline theme
 if isdirectory(expand("~/.vim/bundle/vim-airline"))
     "let g:airline_theme='powerlineish'
-    let g:airline_theme='molokai'
+    "let g:airline_theme='molokai'
     "let g:airline_theme='light'
     "let g:airline_theme='badwolf'
-    "let g:airline_theme='deus'
+    let g:airline_theme='deus'
+    "let g:airline_theme='angr'
     "let g:airline_theme='onehalfdark'
     if !exists('g:airline_symbols')
       let g:airline_symbols = {}

@@ -29,3 +29,7 @@ server/datasources.js
 images/*
 .tmp/
 *.vim
+$PWD/public/
+.ssl/*
+*.hidden
+.certs

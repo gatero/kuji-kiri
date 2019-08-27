@@ -1,0 +1,8 @@
+#!/usr/bin
+
+HISTFILE=$HISTFILE
+CORRUPTED_HISTFILE=~/.history.corrupt-$(date +"%Y.%m.%d")
+
+mv $HISTFILE $CORRUPTED_HISTFILE
+strings $CORRUPTED_HISTFILE $HISTFILE
+fc -R $HISTFILE

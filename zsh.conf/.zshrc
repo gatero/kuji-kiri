@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/gatero/.oh-my-zsh"
+  export ZSH="~/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -85,7 +85,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/.oh-my-zsh.sh
 
 # User configuration
 
@@ -137,14 +137,14 @@ setopt inc_append_history
 setopt share_history # share command history data
 export HISTSIZE=200000000
 export HISTFILE="$HOME/.history"
-IGNORE="ls|l|history *|syze|cd|vi|vim|vi .|vim .|git commit -m *|gc -m *|syse|fg|man *|git add *|"
-IGNORE="${IGNORE}git diff *|git commit *|git checkout -b *|ga *|gco *|gd *|gp *|git push *|GS|cd *|git|"
+IGNORE="ls|l|history *|syze|cd|vi .|vim .|git commit -m *|gc -m *|syse|fg|man *|git add *|"
+IGNORE="${IGNORE}git diff *|git commit *|git checkout -b *|ga *|gco *|gd *|gp *|git push *|GS|git|"
 IGNORE="${IGNORE}ñ|CD|CD *|l *|ls *|GS|jobs|fg|git branch|gb|git branch *|gb *|fb-messenger-cli --help|gt *|"
 IGNORE="${IGNORE}mv|mv *|cp|cp *|rm|rm *|vi *"
 export HISTORY_IGNORE="(${IGNORE})"
 export SAVEHIST=$HISTSIZE
 
-source /media/gatero/files/Projects/environment.conf/system.conf/main.sh
+source ~/files/projects/environment.conf/system.conf/main.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

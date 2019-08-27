@@ -4,8 +4,8 @@ export LC_ALL=en_US.UTF-8
 export GPG_TTY=$(tty)
 
 # SYSTEM
-export DIR_FILES=/media/gatero/files
-export PROJECTS=$DIR_FILES/Projects
+export FILES=~/files
+export PROJECTS=$FILES/projects
 export MYVIMRC=~/.vimrc.local
 export VIMRC=~/.vimrc
 export MYVIMBUNDLE=~/.vimrc.bundles.local
@@ -16,26 +16,27 @@ export LOCALHOST=http://localhost
 export LOCAL_API=$LOCALHOST:3000/api
 
 # GOLANG
-export GOROOT=$HOME/go
-export GOPATH=$PROJECTS/go-workspace
-export GOBIN=$GOROOT/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export GOSRC=$GOPATH/src
 export PATH=$PATH:$GOBIN
 
 # GITHUB PROJECTS
-export DIR_CULTURA_COLECTIVA=$PROJECTS/github.com/cultura-colectiva/
+export GITHUB=$PROJECTS/github.com
+export CULTURA_COLECTIVA=$PROJECTS/github.com/cultura-colectiva
+export CATALOGER=$PROJECTS/github.com/cataloger
+export DANIEL_ORTEGA=$PROJECTS/github.com/daniel-ortega.mx
+export GEOPLE=$PROJECTS/github.com/geople
 
-# BITBUCKET PROJECTS
-export DIR_PROJECTS=$PROJECTS
-export DIR_GITHUB=$PROJECTS/github.com/
-export DIR_LABORATORY=$PROJECTS/laboratory/
-export DIR_CATALOGER=$PROJECTS/github.com/cataloger/
-export DIR_SYSTEM_CONFIG=$PROJECTS/environment.conf
+# OTHER DIRS
+export LABORATORY=$PROJECTS/laboratory
+export SYSTEM_CONFIG=$PROJECTS/environment.conf
 
-export DESKTOP=$DIR_FILES/Desktop
-export DOCUMENTS=$DIR_FILES/Documents
-export DOWNLOADS=$DIR_FILES/Downloads
-export PICTURES=$DIR_FILES/Pictures
-export MUSIC=$DIR_FILES/Music
-export VIDEOS=$DIR_FILES/Videos
-export TEMPLATES=$DIR_FILES/Templates
-export PUBLIC=$DIR_FILES/Public
+export DESKTOP=$FILES/desktop
+export DOCUMENTS=$FILES/documents
+export DOWNLOADS=$FILES/downloads
+export PICTURES=$FILES/pictures
+export MUSIC=$FILES/music
+export VIDEOS=$FILES/videos
+export TEMPLATES=$FILES/templates
+export PUBLIC=$FILES/public

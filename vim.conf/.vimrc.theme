@@ -1,7 +1,7 @@
 set wrap linebreak nolist
-set background=dark
 set termguicolors
-colorscheme monokai_pro
+set background=dark
+"colorscheme monokai_pro
 "colorscheme material-monokai
 "colorscheme night-owl
 "colorscheme seti
@@ -12,3 +12,15 @@ colorscheme monokai_pro
 "colorscheme srcery
 "colorscheme azuki
 "colorscheme boa
+"colorscheme spacecamp
+"colorscheme simpleblack
+"colorscheme srcery
+colorscheme one
+"colorscheme horizon
+"colorscheme hackerman
+"colorscheme plastic
+"colorscheme dark_purple
+"colorscheme mandevilla
+"colorscheme framer
+"colorscheme quantum
+"colorscheme bernhard

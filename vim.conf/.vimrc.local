@@ -4,10 +4,27 @@ filetype on
 filetype plugin on
 filetype indent on
 
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.theme
+source $SYSTEM_CONFIG/vim.conf/.vimrc.theme
 
 let g:materialmonokai_italic=1
-let NERDTreeHighlightCursorline=0
+let g:NERDTreeHighlightCursorline=0
+let g:NERDTreeWinSize=30
+let g:NERDTreeWinSizeMax=30
+let g:user_emmet_leader_key='<C-Z>'
+let g:go_gocode_propose_source=0
+"let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+"let g:ctrlp_user_command="find %s -type f | grep -v -e 'node_modules' -e 'public' -e 'vendor' -e 'dist' -e 'target'"
+set hidden
+
+autocmd FileType go NeoCompleteLock
+highlight Normal guibg=#181C27
+
+setlocal omnifunc=go#complete#Complete
+let g:go_fmt_command = "goimports"
+let g:go_def_mode = "gopls"
+let g:go_info_mode = "gopls"
+let g:go_auto_type_info = 1
+
 set lazyredraw
 set title                       " change the terminal's title
 set visualbell                  " don't beep
@@ -28,8 +45,8 @@ set noswapfile
 set nospell
 set t_Co=256
 "set mouse-=a
-set mouse=
-set ttymouse=
+"set mouse=
+"set ttymouse=
 
 set relativenumber
 "set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
@@ -48,27 +65,32 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType typescript syn clear foldBraces
 autocmd FileType vue syntax sync fromstart
 
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.highlighting
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.multiple_cursors
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.javascript
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.airline
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.indent
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.flow
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.devicons
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.rainbow
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.golang
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.syntastic
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.crtlp
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.nerdtree
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.javascript
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.buffers
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.session
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.mouse
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.tabs
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.move_selection
-source $DIR_SYSTEM_CONFIG/vim.conf/.vimrc.numbers
+source $SYSTEM_CONFIG/vim.conf/.vimrc.highlighting
+source $SYSTEM_CONFIG/vim.conf/.vimrc.multiple_cursors
+source $SYSTEM_CONFIG/vim.conf/.vimrc.javascript
+source $SYSTEM_CONFIG/vim.conf/.vimrc.airline
+source $SYSTEM_CONFIG/vim.conf/.vimrc.indent
+source $SYSTEM_CONFIG/vim.conf/.vimrc.flow
+source $SYSTEM_CONFIG/vim.conf/.vimrc.devicons
+source $SYSTEM_CONFIG/vim.conf/.vimrc.rainbow
+source $SYSTEM_CONFIG/vim.conf/.vimrc.golang
+source $SYSTEM_CONFIG/vim.conf/.vimrc.syntastic
+source $SYSTEM_CONFIG/vim.conf/.vimrc.crtlp
+source $SYSTEM_CONFIG/vim.conf/.vimrc.nerdtree
+source $SYSTEM_CONFIG/vim.conf/.vimrc.javascript
+source $SYSTEM_CONFIG/vim.conf/.vimrc.buffers
+source $SYSTEM_CONFIG/vim.conf/.vimrc.session
+source $SYSTEM_CONFIG/vim.conf/.vimrc.mouse
+source $SYSTEM_CONFIG/vim.conf/.vimrc.tabs
+source $SYSTEM_CONFIG/vim.conf/.vimrc.move_selection
+source $SYSTEM_CONFIG/vim.conf/.vimrc.numbers
 
-"noremap <Up> <NOP>
-"noremap <Down> <NOP>
-"noremap <Left> <NOP>
-"noremap <Right> <NOP>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+nmap <ScrollWheelUp> <nop>
+nmap <ScrollWheelDown> <nop>
+nmap <ScrollWheelLeft> <nop>
+nmap <ScrollWheelRight> <nop>
