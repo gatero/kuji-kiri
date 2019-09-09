@@ -1,0 +1,1 @@
+sudo find / -type f -printf '%s %p\n' | sort -nr | head -50 # find big files
